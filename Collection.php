@@ -189,6 +189,13 @@ class Collection {
         return $accumulator;
     }
 
+    public function reverse(): self {
+        $reversedCollection = new self();
+        $reversedCollection->values = array_reverse($this->values);
+
+        return $reversedCollection;
+    }
+
     public function has($key): bool {
         return array_key_exists($key, $this->values);
     }
