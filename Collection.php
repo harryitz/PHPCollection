@@ -196,6 +196,18 @@ class Collection {
         return $reversedCollection;
     }
 
+    public function filter(callable $callback): self {
+        $filteredCollection = new self();
+
+        foreach ($this->values as $key => $value) {
+            if ($callback($value, $key, $this)) {
+                $filteredCollection->set($key, $value);
+            }
+        }
+
+        return $filteredCollection;
+    }
+
     public function has($key): bool {
         return array_key_exists($key, $this->values);
     }
