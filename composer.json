@@ -1,0 +1,17 @@
+{
+    "name": "andrewc47/phpcollection",
+    "description": "PHPCollection is a powerful utility data structure.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Andrewc47\\Phpcollection\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "AndrewC"
+        }
+    ],
+    "require": {}
+}
