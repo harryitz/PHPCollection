@@ -179,6 +179,16 @@ class Collection {
         return $symmetricDiffCollection;
     }
 
+    public function reduce(callable $fn, $initialValue = 0){
+        $accumulator = $initialValue;
+
+        foreach ($this->values as $key => $value) {
+            $accumulator = $fn($accumulator, $value, $key, $this);
+        }
+
+        return $accumulator;
+    }
+
     public function has($key): bool {
         return array_key_exists($key, $this->values);
     }
